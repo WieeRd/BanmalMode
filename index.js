@@ -1,4 +1,4 @@
-var mecab = require('mecab-ffi');
+var mecab = require('mecab-ya');
 var fs = require('fs');
 
 var si = ['시', 'EP'];
@@ -207,7 +207,7 @@ function haeche(parsedString) {
 }
 
 function parse(string) { // mecab 형태소 분석
-    return mecab.parseSync(input);
+    return mecab.allSync(input);
 };
 
 function plains(parsed) { // 형태소 배열에서 표현형만 남겨 배열로 반환
